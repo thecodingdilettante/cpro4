@@ -5,7 +5,7 @@ export default function ProductList({ products, onAdd, cart }) {
   return (
     <div>
       {products.map(p => (
-        <ProductCard key={p.id} product={p} onAdd={onAdd} cart={cart || []} />
+        <ProductCard key={product.id} product={product} onAdd={onAdd} cart={cart || []} />
       ))}
     </div>
   );
