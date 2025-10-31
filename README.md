@@ -22,12 +22,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 <h1>Checklist</h1>
 
-<ul><li>Catalog.jsx: Fetch API data (initial load), shared state for filters + cart, interval stock updates with cleanup
-<li>ProductList.jsx: Maps products to cards (key={id})
-<li>ProductCard.jsx: Disable Add button if out of stock; show “Out of stock”
-<li>CategoryFilter + PriceFilter: Controlled inputs that update parent state
-<li>CartSummary.jsx: Show item count + total price; decrement and reset actions
-<li>StatusMessage.jsx: Shows correct message based on state (loading, error, or empty)
+<ul><li>Catalog.jsx: Fetch API data (initial load), shared state for filters + cart, interval stock updates with cleanup - YES
+<li>ProductList.jsx: Maps products to cards (key={id}) - YES
+<li>ProductCard.jsx: Disable Add button if out of stock; show “Out of stock” - YES
+<li>CategoryFilter + PriceFilter: Controlled inputs that update parent state - YES
+<li>CartSummary.jsx: Show item count + total price; decrement and reset actions - YES
+<li>StatusMessage.jsx: Shows correct message based on state (loading, error, or empty) - YES
 </ul>
 
 <h1>Known Issues/Limitations</h1>

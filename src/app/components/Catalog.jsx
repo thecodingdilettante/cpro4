@@ -81,9 +81,7 @@ export default function Catalog() {
   {/*RETURN*/}
   return (
     <div>
-      <header>
         <h1>Mini Storefront</h1>
-      </header>
 
           <label>Category: </label>
           <select     
