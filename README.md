@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>Coding Project — Next.js “Button Counter” (React)</h1>
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+<h1>Overview</h1>
+
+Build a small Next.js web app that renders a reusable Button Counter component. Students will scaffold a Next.js project, implement stateful React UI with accessible controls, and deploy it to GitHub.
+
+
+<h1>Getting Started</h1>
 
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+(This project was built by using npx create-next-app@latest mini-storefront, selecting YES or NO for recommended add-ons, and cd mini-storefront before using the above npm run dev.)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<h1>Checklist</h1>
 
-## Learn More
+Catalog.jsx: Fetch API data (initial load), shared state for filters + cart, interval stock updates with cleanup
+ProductList.jsx: Maps products to cards (key={id})
+ProductCard.jsx: Disable Add button if out of stock; show “Out of stock”
+CategoryFilter + PriceFilter: Controlled inputs that update parent state
+CartSummary.jsx: Show item count + total price; decrement and reset actions
+StatusMessage.jsx: Shows correct message based on state (loading, error, or empty)
 
-To learn more about Next.js, take a look at the following resources:
+<h1>Known Issues/Limitations</h1>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+None identified.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
