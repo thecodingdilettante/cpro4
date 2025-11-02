@@ -9,21 +9,20 @@ export default function Catalog() {
   const [cart, setCart] = useState([]);
   const [category, setCategory] = useState('all');
   const [price, setPrice] = useState(0);
+  let [error, setError] = useState('');
 
 {/*API*/}
   useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const res = await fetch("/api/products/route.js");
-        if (!res.ok) throw new Error("Cannot fetch products.");
-        const data = await res.json();
-        setProducts(data);
-      } catch (err) {
-        console.error(err);
-      }
-    }
-
-    fetchProducts();
+    fetch('/api/products')
+        .then((res) => {
+            if (!res.ok) throw new error("Cannot fetch products.");
+            return res.json();
+        })
+        .then((data) => {
+            setProducts(data);
+            setError('');
+        })
+        .catch((err) => setError(err.message))
   }, []);
 
 {/*Add Item Ability*/}
@@ -44,7 +43,7 @@ export default function Catalog() {
     });
   };
 
- {/*Remove Item Ability*/}
+{/*Remove Item Ability*/}
   const RemoveFromCart = (id) => {
     setCart((prevCart) => {
       const existing = prevCart.find((i) => i.id === id);
@@ -65,7 +64,7 @@ export default function Catalog() {
       p.price <= price
   );
 
-  {/*Reset ability*/}
+{/*Reset ability*/}
   const ResetCart = () => {
     if (cart.length === 0) {
       alert("Your cart is empty.");
@@ -77,7 +76,7 @@ export default function Catalog() {
     }
   };
 
-  {/*RETURN*/}
+{/*RETURN*/}
   return (
     <div>
         <h1>Mini Storefront</h1>
@@ -92,18 +91,6 @@ export default function Catalog() {
             <option value="Paper">Paper</option>
             <option value="Miscellany">Miscellany</option>
           </select>
-
-{/*Product List Filtered*/}
-      <section>
-        {filtered.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onAdd={AddToCart}
-            cart={cart}
-          />
-        ))}
-      </section>
 
 {/*Price Slider*/}
 
@@ -120,6 +107,17 @@ export default function Catalog() {
         </div>
 
 <br></br><br></br>
+{/*Product List Filtered*/}
+      <section>
+        {filtered.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onAdd={AddToCart}
+            cart={cart}
+          />
+        ))}
+      </section>
 
 {/*Summary and Reset*/}
 <br></br>
