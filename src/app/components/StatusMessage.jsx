@@ -3,7 +3,7 @@
 export default function StatusMessage({ type }) {
   const messages = {
     loading: "Products loading",
-    error: "Please try again.",
+    error: "Error. Please try again.",
     empty: "No products found with your filters.",
   };
 

@@ -58,6 +58,13 @@ export default function Catalog() {
     });
   };
 
+{/*Product List Filter Ability*/}
+  const filtered = products.filter(
+    (p) =>
+      (category === "all" || p.category === category) &&
+      p.price <= price
+  );
+
   {/*Reset ability*/}
   const ResetCart = () => {
     if (cart.length === 0) {
@@ -69,14 +76,6 @@ export default function Catalog() {
       setCart([]);
     }
   };
-
- {/*Product List Filter Ability*/}
-  const filtered = products.filter(
-    (p) =>
-      (category === "all" || p.category === category) &&
-      p.price <= price
-  );
-
 
   {/*RETURN*/}
   return (
@@ -94,6 +93,18 @@ export default function Catalog() {
             <option value="Miscellany">Miscellany</option>
           </select>
 
+{/*Product List Filtered*/}
+      <section>
+        {filtered.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onAdd={AddToCart}
+            cart={cart}
+          />
+        ))}
+      </section>
+
 {/*Price Slider*/}
 
         <div>
@@ -109,17 +120,6 @@ export default function Catalog() {
         </div>
 
 <br></br><br></br>
-{/*Product List Filtered*/}
-      <section>
-        {filtered.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onAdd={AddToCart}
-            cart={cart}
-          />
-        ))}
-      </section>
 
 {/*Summary and Reset*/}
 <br></br>
