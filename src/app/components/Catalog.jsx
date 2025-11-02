@@ -9,7 +9,7 @@ export default function Catalog() {
   const [cart, setCart] = useState([]);
   const [category, setCategory] = useState('all');
   const [price, setPrice] = useState(0);
-  let [error, setError] = useState('');
+  const [error, setError] = useState('');
 
 {/*API*/}
   useEffect(() => {
