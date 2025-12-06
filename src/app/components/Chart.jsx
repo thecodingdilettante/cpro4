@@ -69,7 +69,22 @@ export default function Chart({ products }) {
   return (
     <div style={{ width: '500px', height: '300px', margin: '20px 0' }}>
       <h2>Average Price by Category</h2>
-      <Bar data={chartData} options={{ responsive: true, maintainAspectRatio: false }} />
+      <Bar 
+        data={chartData} 
+        options={{ 
+          responsive: true, 
+          maintainAspectRatio: false,
+          plugins: {
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return '$' + parseFloat(context.parsed.y).toFixed(2);
+                }
+              }
+            }
+          }
+        }} 
+      />
     </div>
   );
 }
