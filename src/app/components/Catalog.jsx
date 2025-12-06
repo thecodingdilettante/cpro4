@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import CartSummary from './CartSummary';
+import Chart from './Chart';
 
 export default function Catalog() {
   const [products, setProducts] = useState([]);
@@ -80,6 +81,8 @@ export default function Catalog() {
   return (
     <div>
         <h1>Mini Storefront</h1>
+
+        <Chart products={products} />
 
           <label>Category: </label>
           <select     
