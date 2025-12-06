@@ -1,0 +1,3 @@
+1. I asked Copilot to create a chart that showed the average price per each storefront category. It created a solid chart the first time around. I checked if it was dynamic by adding another product to the list that was exorbitantly priced and the chart adjusted itself to accomodate.
+2. Originally the chart tooltips had no dollar signs and were rounded in odd ways (some would have one decimal, another with two, and a third with none). I told it to add dollar signs and to round everything in the tooltips to two decimal places.
+3. It saved time and effort by managing to create the entire chart file without my having to do any of the work. It also had the decency to include it in the "Imports" within the Catalog.jsx file so the chart would appear on the website.

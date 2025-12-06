@@ -7,7 +7,7 @@ export async function GET() {
     { id: "p5", name: "Fountain Pen", price: 50, category: "Writing Utensils", stock: 10 },
     { id: "p6", name: "Cardstock", price: 20, category: "Paper", stock: 15 },
     { id: "p7", name: "Crayons", price: 7, category: "Writing Utensils", stock: 8},
-    { id: "p8", name: "Gluestick", price: 4, category: "Miscellany", stock: 12 },
+    { id: "p8", name: "Gluestick", price: 4, category: "Miscellany", stock: 12 }
   ];
   return Response.json(products);
 }
